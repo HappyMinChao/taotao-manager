@@ -1,9 +1,9 @@
-.settings
-target
 *.class
 *.jar
 *.war
 *.ear
 .classpath
 .project
+
 /target
+/.settings
