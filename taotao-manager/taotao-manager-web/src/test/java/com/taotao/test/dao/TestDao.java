@@ -2,6 +2,8 @@ package com.taotao.test.dao;
 
 import java.util.List;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,7 +16,12 @@ import com.taotao.pojo.TbItemExample;
 
 public class TestDao {
 	
-	ApplicationContext ioc = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
+	ApplicationContext ioc;
+	
+	@Before
+	public void init(){
+		ioc = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
+	}
 
 	@Test
 	public void testPageHelper(){
@@ -37,6 +44,10 @@ public class TestDao {
 			System.out.println(tbItem);
 		}
 		
+	/*	@After
+		public void destory(){
+			System.out.println("destory");
+		}*/
 		
 	}
 	
