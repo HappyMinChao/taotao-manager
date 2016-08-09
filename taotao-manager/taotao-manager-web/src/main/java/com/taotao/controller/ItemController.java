@@ -20,5 +20,12 @@ public class ItemController {
 	public TbItem getItemById(@PathVariable(value="itemId") long itemId){
 		return itemService.getTbItem(itemId);
 	}
+	
+	@RequestMapping(value="/item/list")
+	@ResponseBody
+	public String getItemList(){
+		
+		return "";
+	}
 
 }

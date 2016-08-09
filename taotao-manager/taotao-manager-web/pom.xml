@@ -9,6 +9,13 @@
 	<artifactId>taotao-manager-web</artifactId>
 	<packaging>war</packaging>
 	<dependencies>
+		<!-- 添加junit测试包 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.taotao</groupId>
 			<artifactId>taotao-manager-service</artifactId>
