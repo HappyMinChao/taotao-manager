@@ -1,7 +1,12 @@
-package com.taotao.test.dao;
+/*package com.taotao.test.dao;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.SocketException;
 import java.util.List;
 
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,37 +23,52 @@ public class TestDao {
 	
 	ApplicationContext ioc;
 	
-	@Before
+	//@Before
 	public void init(){
-		ioc = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
+		ioc = new ClassPathXmlApplicationContext("classpath:spring/applicationContext*.xml");
 	}
 
 	@Test
 	public void testPageHelper(){
 		TbItemMapper itemDao = ioc.getBean(TbItemMapper.class);
 		
-		//使用pageHelper前设置分页信息
+		//璁剧疆pageHelper鍒嗛〉淇℃伅
 		PageHelper.startPage(1, 20);
 		
-		//条件查询使用 ItemExample() 类
+		//鍒涘缓ItemExample()鐢ㄦ潵鏉′欢鏌ヨ
 		TbItemExample itemExample = new TbItemExample();
 		List<TbItem> list = itemDao.selectByExample(itemExample);
 		
-		//把查询结果设置到pageInfo中
+		//锟窖诧拷询锟斤拷锟斤拷锟斤拷玫锟絧ageInfo锟斤拷
 		PageInfo<TbItem> pageInfo = new PageInfo<TbItem>(list);
 		
-		//可以在pageInfo中获取到总条数和数据等信息
+		//锟斤拷锟斤拷锟斤拷pageInfo锟叫伙拷取锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟捷碉拷锟斤拷息
 		long totalNumber = pageInfo.getTotal();
 		List<TbItem> list2 = pageInfo.getList();
 		for (TbItem tbItem : list2) {
 			System.out.println(tbItem);
 		}
 		
-	/*	@After
-		public void destory(){
-			System.out.println("destory");
-		}*/
-		
+	}
+	@Test
+	public void testFtp(){
+		FTPClient ftpClient = new FTPClient();
+		try {
+			ftpClient.connect("192.168.1.104");
+			ftpClient.login("ftpuser", "ftpuser");
+			FileInputStream fis = new FileInputStream("C:\\Users\\Administrator\\Desktop\\spring瀹瑰櫒鍜宻pringMVC瀹瑰櫒鍏崇郴.png");
+			ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+			ftpClient.storeFile("123.png", fis);
+			fis.close();
+			ftpClient.logout();
+		} catch (SocketException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }
+*/

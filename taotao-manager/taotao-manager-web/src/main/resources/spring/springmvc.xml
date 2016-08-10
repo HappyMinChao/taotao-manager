@@ -9,10 +9,17 @@
 
 	<context:component-scan base-package="com.taotao.controller" />
 	<mvc:annotation-driven />
+	<mvc:default-servlet-handler/>
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<!-- 因为spring核心拦截器配置的映射路径为/, 所以除jsp以外的所有资源都会被拦截， 包括js、css，所有要排除 -->
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+	<!-- 配置文件上传解析器 -->
+	<bean id="commonsMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="maxUploadSize" value="5242880"></property>
+	</bean>
 </beans>

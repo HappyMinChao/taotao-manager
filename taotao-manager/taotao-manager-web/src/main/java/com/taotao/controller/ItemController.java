@@ -30,7 +30,8 @@ public class ItemController {
 	@ResponseBody
 	public EasyUIDateGridResult getItemList(@RequestParam(value="page",defaultValue="1")int pageNum, 
 							  @RequestParam(value="rows",defaultValue="30")int pageSize){
-		return  itemService.getItemList(pageNum, pageSize);
+		EasyUIDateGridResult result = itemService.getItemList(pageNum, pageSize);
+		return  result;
 	}
 
 }

@@ -37,7 +37,7 @@ var TT = TAOTAO = {
 	// 格式化连接
 	formatUrl : function(val,row){
 		if(val){
-			return "<a href='"+val+"' target='_blank'>查看</a>";			
+			return "<a href='"+val+"' target='_blank'>鏌ョ湅</a>";			
 		}
 		return "";
 	},
@@ -48,7 +48,7 @@ var TT = TAOTAO = {
 	// 格式化商品的状态
 	formatItemStatus : function formatStatus(val,row){
         if (val == 1){
-            return '正常';
+        	return '正常';
         } else if(val == 2){
         	return '<span style="color:red;">下架</span>';
         } else {
@@ -62,7 +62,7 @@ var TT = TAOTAO = {
     	// 初始化选择类目组件
     	this.initItemCat(data);
     },
-    // 初始化图片上传组件
+ // 初始化图片上传组件
     initPicUpload : function(data){
     	$(".picFileUpload").each(function(i,e){
     		var _ele = $(e);
@@ -102,7 +102,7 @@ var TT = TAOTAO = {
     	});
     },
     
-    // 初始化选择类目组件
+ // 初始化选择类目组件
     initItemCat : function(data){
     	$(".selectItemCat").each(function(i,e){
     		var _ele = $(e);
@@ -123,11 +123,11 @@ var TT = TAOTAO = {
     			    onOpen : function(){
     			    	var _win = this;
     			    	$("ul",_win).tree({
-    			    		url:'/item/cat/list',
+    			    		url:'item/cat/list',
     			    		animate:true,
     			    		onClick : function(node){
     			    			if($(this).tree("isLeaf",node.target)){
-    			    				// 填写到cid中
+    			    				// 濉啓鍒癱id涓�
     			    				_ele.parent().find("[name=cid]").val(node.id);
     			    				_ele.next().text(node.text).attr("cid",node.id);
     			    				$(_win).window('close');
