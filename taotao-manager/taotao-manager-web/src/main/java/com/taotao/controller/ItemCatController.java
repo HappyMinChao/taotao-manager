@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.taotao.common.TreeNodeResult;
+import com.taotao.common.pojo.TreeNodeResult;
 import com.taotao.service.ItemCatService;
 
 @RequestMapping(value="/item/cat")

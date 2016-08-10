@@ -1,6 +1,6 @@
 package com.taotao.service;
 
-import com.taotao.common.EasyUIDateGridResult;
+import com.taotao.common.pojo.EasyUIDateGridResult;
 import com.taotao.pojo.TbItem;
 
 public interface ItemService {

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.taotao.common.EasyUIDateGridResult;
+import com.taotao.common.pojo.EasyUIDateGridResult;
 import com.taotao.pojo.TbItem;
 import com.taotao.service.ItemService;
 
